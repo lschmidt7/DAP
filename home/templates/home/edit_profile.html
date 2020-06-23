@@ -1,0 +1,24 @@
+{% extends "home/base.html" %}
+{% load static %}
+
+{% block info %}
+
+    {% if logged == True %}
+        <a href="{% url 'profile' %}">{{username}}</a>
+        |
+        <a href="{% url 'logoff' %}">Logoff</a>
+    {% endif %}
+
+{% endblock %}
+
+{% block content %}
+
+<div id="home">
+    <div id="edit-profile">
+        <h1>
+            Ediçao de Perfil
+        </h1>
+    </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,21 @@
+{% extends "home/base.html" %}
+{% load static %}
+
+{% block content %}
+
+<div id="login">
+        <form method='POST' action='{% url 'login' %}'>
+            {% csrf_token %}
+            <input type="text" name="email">
+            <input type="password" name="pass">
+            <div id="login-warning" class="warning-text">{{aviso}}</div>
+            <input type="submit" value="Login" id="submit">
+        </form>
+        <div id="recover">
+            <a href="{% url 'signup' %}">Não é cadastrado?</a>
+            <br />
+            <a href="">Recupere a senha!</a>
+        </div>
+    </div>
+
+{% endblock %}

@@ -1,0 +1,31 @@
+{% extends "home/base.html" %}
+{% load static %}
+
+{% block info %}
+
+    {% if logged == True %}
+        <a href="{% url 'profile' %}">{{username}}</a>
+        |
+        <a href="{% url 'logoff' %}">Logoff</a>
+    {% endif %}
+
+{% endblock %}
+
+{% block content %}
+
+<div id="home">
+    <div id="delete-profile">
+        <h1>
+            Exclusão de perfil
+        </h1>
+        <div class="container max-width centering">
+            Tem certeza que deseja excluir sua conta?
+            <br>
+            <a href="{% url 'deleted_profile' %}">Sim</a>
+            |
+            <a href="{% url 'index' %}">Não</a>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

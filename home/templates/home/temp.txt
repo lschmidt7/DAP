@@ -1,0 +1,74 @@
+<div id="header">
+            <div id="logo">
+                <a href="/home">
+                    <img src="{% static 'images/logo.png' %}" width="70" height="65"/>
+                </a>
+            </div>
+            <div id="title"></div>
+            <div id="info">
+                {% if login != None %}
+                    <a href="/home/pag?page_name=account">{{username}}</a>
+                    |
+                    <a href="{% url 'logoff' %}">Logoff</a>
+                {% endif %}
+            </div>
+        </div>
+        
+        <div id="body">
+            {% if login == None %}
+                {% include "home/login.html" %}
+            {% endif %}
+        </div>
+
+
+
+
+
+        def pag(request):
+    f = open(CITIES_ROOT+'cities.txt','r')
+    cities = f.readlines()
+    page_name = request.GET.get('page_name')
+    template = loader.get_template('home/index.html')
+    context = {
+        'home_name': 'DAP',
+        'page_name' : page_name,
+    }
+    if request.session.has_key('login'):
+        sess = request.session['login']
+        username = request.session['username']
+        context = {
+            'home_name': 'DAP',
+            'login' : sess,
+            'username' : username,
+            'page_name' : page_name,
+            'cities' : cities,
+            'city_name': None,
+        }
+
+    return HttpResponse(template.render(context,request))
+
+def city(request):
+    template = loader.get_template('home/index.html')
+    if request.session.has_key('login'):
+        sess = request.session['login']
+        cities_file = open(CITIES_ROOT+'cities.txt','r')
+        cities = cities_file.readlines()
+        city_name = request.GET.get('city_name')
+        bairros=[]
+        if(city_name!="default"):
+            bairros_file = open(CITIES_ROOT+city_name.replace(' ','').lower()+'.txt','r')
+            bairros = bairros_file.readlines()
+        for i in range(len(cities)):
+            cities[i] = cities[i].replace('\n','')
+        print(cities)
+        username = request.session['username']
+        context = {
+            'home_name': 'DAP',
+            'login' : sess,
+            'username' : username,
+            'page_name' : 'register_immobile',
+            'cities' : cities,
+            'city_name' : city_name,
+            'bairros' : bairros,
+        }
+    return HttpResponse(template.render(context,request))

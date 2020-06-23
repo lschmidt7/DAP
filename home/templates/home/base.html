@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<html>
+    <head>
+        {% block title %}<title>DAP</title>{% endblock %}
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+        <link rel="stylesheet" href="{% static 'css/style.css' %}">
+        <link rel="stylesheet" href="{% static 'css/login.css' %}">
+        <link rel="stylesheet" href="{% static 'css/profile.css' %}">
+        <link rel="stylesheet" href="{% static 'css/index.css' %}">
+        <link rel="stylesheet" href="{% static 'css/signup.css' %}">
+        <link rel="stylesheet" href="{% static 'css/header.css' %}">
+        <link rel="stylesheet" href="{% static 'css/planes.css' %}">
+        <link rel="stylesheet" href="{% static 'css/search.css' %}">
+        <link rel="stylesheet" href="{% static 'css/menu.css' %}">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <link rel="shortcut icon" type="image/png" href="{% static 'logo2.png' %}"/>
+    </head>
+    <body>
+        
+        <nav class="navbar header-top fixed-top navbar-expand-lg navbar-dark bg-dark">
+            <div class="container-fluid maxwidth">
+                <div id="logo">
+                    <a href="/home">
+                        <img src="{% static 'images/logos/logo2.png' %}" width="40" height="40"/>
+                    </a>
+                </div>
+
+                <div id="menu" class="menu">
+                    <div class="collapse navbar-collapse" id="navbarText">
+                        <ul class="navbar-nav mr-auto">
+                            {% if page_name == 'home' %}
+                            <li class="nav-item active">
+                            {% else %}
+                            <li class="nav-item">
+                            {% endif %}
+                                <a class="nav-link" href="/home">Home <span class="sr-only">(current)</span></a>
+                            </li>
+                            {% if page_name == 'services' %}
+                            <li class="nav-item active">
+                            {% else %}
+                            <li class="nav-item">
+                            {% endif %}
+                                <a class="nav-link" href="{% url 'services' %}">Services</a>
+                            </li>
+                            {% if page_name == 'contact' %}
+                            <li class="nav-item active">
+                            {% else %}
+                            <li class="nav-item">
+                            {% endif %}
+                                <a class="nav-link" href="{% url 'contact' %}">Contact</a>
+                            </li>
+                            {% if page_name == 'about' %}
+                            <li class="nav-item active">
+                            {% else %}
+                            <li class="nav-item">
+                            {% endif %}
+                                <a class="nav-link" href="{% url 'about' %}">About</a>
+                            </li>
+                            {% if page_name == 'planes' %}
+                            <li class="nav-item active">
+                            {% else %}
+                            <li class="nav-item">
+                            {% endif %}
+                                <a class="nav-link" href="{% url 'planes' %}">Planes</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div id="info-nav-bar">
+                    {% block info %}
+                        
+                    {% endblock %}
+                </div>
+            </div>
+        </nav>
+
+        <div class="container-fluid maxwidth nav-distance">
+            {% block content %}
+            {% endblock %}
+        </div>
+
+
+    </body>
+</html>

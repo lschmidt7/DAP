@@ -1,0 +1,8 @@
+.menu {
+    height: 150%;
+}
+
+.menu li:hover a:hover{
+    background-color: darkgray;
+    border-radius: 0.5em;
+}

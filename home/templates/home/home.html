@@ -1,0 +1,23 @@
+{% extends "home/base.html" %}
+{% load static %}
+
+{% block info %}
+
+    {% if logged == True %}
+        <a href="{% url 'profile' %}">{{username}}</a>
+        |
+        <a href="{% url 'logoff' %}">Logoff</a>
+    {% endif %}
+
+{% endblock %}
+
+{% block content %}
+
+<div id="home">
+    <div id="index">
+        <a href="{% url 'search_page' %}"><input type="button" value="Buscar" /></a>
+        <a href="{% url 'register' city_name='default' %}"><input type="button" value="Anunciar" /></a>
+    </div>
+</div>
+
+{% endblock %}

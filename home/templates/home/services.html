@@ -1,0 +1,48 @@
+{% extends "home/base.html" %}
+{% load static %}
+
+{% block info %}
+
+    {% if logged == True %}
+        <a href="{% url 'profile' %}">{{username}}</a>
+        |
+        <a href="{% url 'logoff' %}">Logoff</a>
+    {% endif %}
+
+{% endblock %}
+
+{% block content %}
+
+<div id="home">
+    <div id="services">
+        <h1>
+            Conheça nossos Serviços!
+        </h1>
+        <hr>
+        <div class="container max-width justifying">
+            Está procurando uma vaga para morar? Gostaria que fosse em algum lugar especifico?
+            Gostaria que fosse com alguem legal como você? que tenha hábitos parecidos? então você está 
+            no lugar certo. O DAP foi criado com o objetivo de anunciar vagas em um buscador unificado, 
+            mas principalmente, unir pessoas, dando a você maior liberdade de escolha na hora de achar alguem para dividir 
+            aquele apartamento na faculdade, ou para você que está trabalhando. Enfim, esperamos que você 
+            desfrute dos nossos serviços e encontre aquela pessoa bacana para dividir seu imóvel.
+        </div>
+        <hr>
+        <div class="container max-width justifying">
+                <b>Anuncie</b>: o serviço de anuncios conta com diversas opções para que você personalize sua 
+                oferta de vaga como quiser. <a href="{% url 'register' city_name='default' %}">Anuncie Aqui</a>.
+                <hr>
+                <b>Busque</b>: o buscador conta com opções configuraveis de busca para que você encontre aquela vaga, para morar 
+                com pessoas legais como você, além disso contamos com uma busca personalizada onde a busca por uma vaga, 
+                é realizada de acordo com as suas caracteristicas de perfil. <a href="{% url 'search_page' %}">Faça sua busca</a>.
+        </div>
+        <div class="container max-width centered">
+            <a href="/home">
+                <input type="submit" value="Home" id="submit">
+            </a>
+        </div>
+
+    </div>
+</div>
+
+{% endblock %}

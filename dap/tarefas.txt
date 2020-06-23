@@ -1,0 +1,10 @@
+- confirmação de email
+- cadastro de usuário como buscador ou anunciante
+- recuperação de senha
+- pagina de busca de imóveis
+- página de cadastro de imóveis
+- página sobre
+- página de contato
+- página de planos de compra
+- logo do site
+- nome do site

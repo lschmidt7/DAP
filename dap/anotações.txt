@@ -1,0 +1,8 @@
+- cada usuário pode fazer apenas um anuncio por vez
+- anunciante: cobrar por anuncio ou por tempo de conta
+- buscador: cobrar por busca, ou por descobrir quem são os que estão oferecendo, ou conta livre
+- mostrar quantos anunciantes tem na cidade, ou na região (bairro) que o buscador procura antes de ela comprar a conta
+- possibilidade de buscadores se encontrarem (ao invez de anunciante anunciar e o buscador procurar, aproximar buscadores)
+- imagem de fundo com vista panoramica ou foto de lugar da cidade
+- em vez de idade coloca ano de nascimento
+- valores devem estar no site

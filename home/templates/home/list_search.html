@@ -1,0 +1,27 @@
+{% extends "home/base.html" %}
+{% load static %}
+
+{% block info %}
+
+    {% if logged == True %}
+        <a href="{% url 'profile' %}">{{username}}</a>
+        |
+        <a href="{% url 'logoff' %}">Logoff</a>
+    {% endif %}
+
+{% endblock %}
+
+{% block content %}
+
+<div id="home">
+    <div id="search_resultset">
+        <h1>
+            Resultado da busca
+        </h1>
+        <div class="container-fluid">
+            
+        </div>
+    </div>
+</div>
+
+{% endblock %}

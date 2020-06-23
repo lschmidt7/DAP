@@ -1,0 +1,45 @@
+#login {
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    background-color: rgba(235, 235, 224, 0.6);
+    height: auto;
+    margin-top: 5%;
+    border-radius: 2em;
+}
+
+#login form{
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    padding: 1em;
+}
+
+#login input{
+    width: 100%;
+    border: 0px;
+    border-radius: 1em;
+    padding: 0.4em;
+    margin-top: 1.5em;
+    font-size: 1.5em;
+    text-align: center;
+}
+
+#submit {
+    background-color: darkcyan;
+    border: 0em;
+    color: aliceblue;
+}
+
+#submit:hover {
+    background-color: cadetblue;
+    cursor: pointer;
+}
+
+#login #recover {
+    width: 100%;
+    text-align: center;
+    padding: 1em;
+}

@@ -1,0 +1,5 @@
+- quantos quartos vagos?
+- localização do imóvel?
+- lugares próximos?
+- informação dos moradores
+- valores de agua, luz, internet, condominio, aluguel, demais valores

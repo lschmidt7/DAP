@@ -1,0 +1,27 @@
+{% extends "home/base.html" %}
+{% load static %}
+
+{% block info %}
+
+    {% if logged == True %}
+        <a href="{% url 'profile' %}">{{username}}</a>
+        |
+        <a href="{% url 'logoff' %}">Logoff</a>
+    {% endif %}
+
+{% endblock %}
+
+{% block content %}
+
+<div id="home">
+    <div id="about">
+        <h1>
+            Veja quantos inscritos tem em sua cidade antes de se cadastrar.
+        </h1>
+        <div class="container-fluid">
+            
+        </div>
+    </div>
+</div>
+
+{% endblock %}

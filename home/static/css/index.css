@@ -1,0 +1,23 @@
+#index input {
+    width: 50%;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    padding: 1em;
+    background-color: darkcyan;
+    border-radius: 1em;
+    border: 0em;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    color: aliceblue;
+}
+
+#index input:hover {
+    background-color: cadetblue;
+    cursor: pointer;
+}
+
+#index a:hover {
+    text-decoration: none;
+}

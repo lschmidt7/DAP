@@ -1,0 +1,24 @@
+#signup {
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#signup input{
+    width: 100%;
+    border-radius: 1em;
+    border: 0px;
+    font-size: 1.5em;
+    text-align: center;
+}
+
+#signup #submit {
+    background-color: darkcyan ;
+    border: 0em;
+    color: aliceblue;
+}
+
+#signup #submit:hover {
+    background-color: cadetblue;
+    cursor: pointer;
+}

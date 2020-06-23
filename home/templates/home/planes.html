@@ -1,0 +1,21 @@
+{% extends "home/base.html" %}
+
+{% block info %}
+
+    {% if logged == True %}
+        <a href="{% url 'profile' %}">{{username}}</a>
+        |
+        <a href="{% url 'logoff' %}">Logoff</a>
+    {% endif %}
+
+{% endblock %}
+
+{% block content %}
+<div id="home">
+    <div id="planes">
+        <h1>
+            Conheça nossos planos!
+        </h1>
+    </div>
+</div>
+{% endblock %}

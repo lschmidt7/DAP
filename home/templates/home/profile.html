@@ -1,0 +1,103 @@
+{% extends "home/base.html" %}
+{% load static %}
+
+{% block info %}
+
+    {% if logged == True %}
+        <a href="{% url 'profile' %}">{{username}}</a>
+        |
+        <a href="{% url 'logoff' %}">Logoff</a>
+    {% endif %}
+
+{% endblock %}
+
+{% block content %}
+
+<script>
+
+function overPhoto() {
+    document.getElementById("alter-photo").className="show";
+}
+
+function outPhoto() {
+    document.getElementById("alter-photo").className="hidden";
+}
+
+</script>
+
+<div id="home">
+    <div id="account">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-4">
+                    <div class="row">
+                        <div id="profile-photo" onmouseenter="overPhoto()" onmouseleave="outPhoto()">
+                            {% static "images/profile-photos/" as baseUrl %}
+                            <img src="{{baseUrl}}{{photo_name}}" width="220" height="220"/>
+                            <a href="">
+                                <div id="alter-photo" class="hidden">
+                                    Atualizar
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <a href="{% url 'edit_profile' %}">
+                                <input type="button" value="Edit Profile" class="button-profile btn-update">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <a href="{% url 'delete_profile' %}">
+                                <input type="button" value="Delete Profile" class="button-profile btn-delete">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div id="info" class="col">
+                    <div class="row form-group vertical">
+                        <div class="col"><h1>Profile</h1></div>
+                    </div>
+                    <div class="row form-group vertical">
+                        <div class="col text-right">Email: </div>
+                        <div class="col">{{email}}</div>
+                    </div>
+                    <div class="row form-group vertical">
+                        <div class="col text-right">First Name:</div>
+                        <div class="col">{{first_name}}</div>
+                    </div>
+                    <div class="row form-group vertical">
+                        <div class="col text-right">Last Name:</div>
+                        <div class="col">{{last_name}}</div>
+                    </div>
+                    <div class="row form-group vertical">
+                        <div class="col text-right">Nascimento: </div>
+                        <div class="col">{{born_year}}</div>
+                    </div>
+                    <div class="row form-group vertical">
+                        <div class="col text-right">Estuda: </div>
+                        {% if student %}
+                            <div class="col">Sim</div>
+                        {% else %}
+                            <div class="col">Não</div>
+                        {% endif %}
+                    </div>
+                    <div class="row form-group vertical">
+                        <div class="col text-right">Trabalha: </div>
+                        {% if worker %}
+                            <div class="col">Sim</div>
+                        {% else %}
+                            <div class="col">Não</div>
+                        {% endif %}
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+{% endblock %}

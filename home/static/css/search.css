@@ -1,0 +1,29 @@
+#search {
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#search input {
+    width: 100%;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    padding: 1em;
+    background-color: darkcyan;
+    border-radius: 1em;
+    border: 0em;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    color: aliceblue;
+}
+
+#search input:hover {
+    background-color: cadetblue;
+    cursor: pointer;
+}
+
+#search a:hover {
+    text-decoration: none;
+}
